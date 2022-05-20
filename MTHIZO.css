@@ -1,0 +1,42 @@
+#headerTable {
+    width: 100%;
+}
+.logo {
+    width: 90px;
+}
+header{
+    background-color: aqua;
+    padding: 6px;
+}
+nav {
+    margin-right: 16px;
+}
+a {
+    margin-right: 16px;
+}
+video {
+    width: 100%;
+}
+#userImage {
+    width: 100%;
+}
+.bioBox {
+    width: 100%;
+    text-align: left;
+}
+.btn{
+    padding: 16px;
+    border-radius: 10px;
+    font-size: large;
+}
+.footerText {
+    text-align: center;
+    color: black;
+    top: 25px;
+    position: relative;
+}
+footer {
+    background-color: darkblue;
+    height: 150px;
+    position: relative;
+}

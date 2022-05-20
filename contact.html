@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="ThembaKubheka">
+        <meta name="keywords" content="html">
+        <title>Kubheka Themba</title>
+        <link rel="stylesheet" href="contact.css">
+    </head>
+    <header>
+        <table id="headerTable" >
+    
+            <tr>
+            <!---table data which houses our logo--->
+                <td>
+                    <img class="logo" src="KUBHEKA.jpg" alt="">
+                </td>
+    
+                <!---table data which houses our nav bar--->
+                <td align="right">
+                    <nav>
+                     <a href="Portfolio.html">Home</a>
+                     <a href="about.html">About</a>
+                     <a href="contact.html">Contact us</a>
+                    </nav>
+                </td>
+            </tr>
+        </table>
+        
+    </header>
+
+<body>
+   
+    <div id="overlay">
+             <h1>contact us</h1>
+
+             <form
+             action="https://formspree.io/f/mgedrjby"
+             method="POST"
+           >
+             <label>
+               Your email:
+               <input type="email" name="email">
+             </label>
+             <label>
+                Your Name:
+                <input type="Name" name="Name">
+              </label>
+             <label>
+               Your message:
+               <textarea name="message"></textarea>
+             </label>
+             <!-- your other form fields go here -->
+             <button type="submit">Send</button>
+           </form>
+    </div>
+
+
+<script>
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Thanks for your submission!";
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "Oops! There was a problem submitting your form"
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
+
+    <h1> Contact Info</h1>
+    1411 Kgolokwe Street, <br>Tladi Soweto <br>
+    P.O Kwa-Xuma <br>
+    1868
+
+</body>
+
+    <footer>
+        <p class="footerText">THEMBA KUBHEKA</br>
+      Contact: 0730823069/0714514246</br>
+        Email: sombheshane@gmail.com </br>
+        Facebook: kubheka.themba</br>
+        Intagram: kubheka80></p>
+    </footer>
+
+</html>
